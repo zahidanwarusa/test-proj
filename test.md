@@ -305,3 +305,6 @@ public class ApiTests extends TestBase {
         }
     }
 }
+
+
+base.url=https://jsonplaceholder.typicode.com
