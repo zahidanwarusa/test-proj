@@ -1,0 +1,92 @@
+package com.demo.utils;
+
+import com.demo.model.TestCase;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import org.json.JSONObject;
+
+public class RestUtils {
+    
+    public static Response executeRequest(TestCase testCase) {
+        // Create request specification with logging
+        RequestSpecification request = RestAssured.given()
+            .log().all()
+            .contentType("application/json");  // Default content type
+        
+        try {
+            // Add headers if present
+            if (testCase.getHeaders() != null && !testCase.getHeaders().isEmpty()) {
+                try {
+                    JSONObject headers = new JSONObject(testCase.getHeaders());
+                    headers.keys().forEachRemaining(key -> 
+                        request.header(key, headers.getString(key))
+                    );
+                } catch (Exception e) {
+                    System.out.println("Error parsing headers: " + e.getMessage());
+                }
+            }
+            
+            // Add request body for POST/PUT methods
+            if (testCase.getRequestBody() != null && !testCase.getRequestBody().isEmpty()) {
+                request.body(testCase.getRequestBody());
+            }
+            
+            // Execute request based on method
+            Response response;
+            switch (testCase.getMethod().toUpperCase()) {
+                case "GET":
+                    response = request.get(testCase.getEndpoint());
+                    break;
+                    
+                case "POST":
+                    response = request.post(testCase.getEndpoint());
+                    break;
+                    
+                case "PUT":
+                    response = request.put(testCase.getEndpoint());
+                    break;
+                    
+                case "DELETE":
+                    response = request.delete(testCase.getEndpoint());
+                    break;
+                    
+                case "PATCH":
+                    response = request.patch(testCase.getEndpoint());
+                    break;
+                    
+                default:
+                    throw new IllegalArgumentException("Unsupported HTTP method: " + testCase.getMethod());
+            }
+            
+            // Log response
+            response.then().log().all();
+            return response;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to execute API request: " + e.getMessage());
+        }
+    }
+    
+    // Utility method to validate JSON response against expected value
+    public static boolean validateJsonResponse(Response response, String expectedJsonPath, String expectedValue) {
+        try {
+            String actualValue = response.jsonPath().getString(expectedJsonPath);
+            return expectedValue.equals(actualValue);
+        } catch (Exception e) {
+            System.out.println("Error validating JSON response: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    // Utility method to check if string is valid JSON
+    public static boolean isValidJson(String json) {
+        try {
+            new JSONObject(json);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+}
