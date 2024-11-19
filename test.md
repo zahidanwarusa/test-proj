@@ -308,3 +308,34 @@ public class ApiTests extends TestBase {
 
 
 base.url=https://jsonplaceholder.typicode.com
+
+
+Create these configuration files:
+
+1. `src/main/resources/config.properties`:
+```properties
+base.url=https://jsonplaceholder.typicode.com
+```
+
+2. `src/test/resources/TestCases.xlsx`:
+```
+TestId | Endpoint | Method | RequestBody | Headers | ExpectedStatus | ExpectedResponse | Enabled
+TC001  | /posts/1 | GET    |            |         | 200           | $.id            | true
+TC002  | /posts   | POST   | {"title": "test"} | {"Content-Type": "application/json"} | 201 | $.id | true
+TC003  | /users/1 | GET    |            |         | 200           | $.name          | true
+```
+
+3. `src/test/resources/testng.xml`:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Test Suite">
+    <test name="API Tests">
+        <classes>
+            <class name="com.demo.tests.ApiTests"/>
+        </classes>
+    </test>
+</suite>
+```
+
+Would you like me to explain any specific component or show how to run and test this framework?
