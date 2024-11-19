@@ -234,8 +234,9 @@ public class TestReporter {
     }
     
     public static void logError(TestCase testCase, Exception e) {
-        test.log(Status.FAIL, "Test Error: " + testCase.getTestId())
-            .error(e);
+        test.log(Status.FAIL, "Test Error: " + testCase.getTestId() + "\n" +
+                "Error Message: " + e.getMessage() + "\n" +
+                "Stack Trace: " + e.getStackTrace());
     }
     
     public static void generateReport() {
