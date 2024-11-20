@@ -225,4 +225,154 @@ Also, try these troubleshooting steps:
         <log4j.version>2.20.0</log4j.version>
         <extentreports.version>5.1.1</extentreports.version>
         <json.version>20231013</json.version>
-    </properties>
+    </properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I see the issue. There are two problems:
+1. The TestNG configuration is trying to use a listener that doesn't exist
+2. The package name in testng.xml doesn't match our project structure
+
+Let's fix both issues:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Test Suite" parallel="methods" thread-count="2">
+    
+    <test name="REST API Tests">
+        <classes>
+            <class name="com.demo.tests.ApiTests"/>
+        </classes>
+    </test>
+    
+</suite>
+
+```
+
+And let's update the project structure to ensure all classes are in the correct packages:
+
+```
+src/
+├── main/
+│   └── java/
+│       └── com/
+│           └── demo/
+│               ├── base/
+│               │   └── TestBase.java
+│               ├── constants/
+│               │   └── ApiConstants.java
+│               ├── model/
+│               │   └── TestCase.java
+│               └── utils/
+│                   ├── ExcelReader.java
+│                   └── RestUtils.java
+└── test/
+    └── java/
+        └── com/
+            └── demo/
+                └── tests/
+                    └── ApiTests.java
+```
+
+Please ensure your ApiTests class has the correct package declaration:
+
+```java
+package com.demo.tests;
+
+import com.demo.base.TestBase;
+import com.demo.model.TestCase;
+import org.testng.annotations.Test;
+import io.restassured.response.Response;
+import org.testng.Assert;
+
+public class ApiTests extends TestBase {
+    
+    @Test(dataProvider = "apiTestData")
+    public void executeApiTests(TestCase testCase) {
+        try {
+            System.out.println("Executing Test: " + testCase.getTestId());
+            
+            // Your test implementation here
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Test failed: " + e.getMessage());
+        }
+    }
+}
+
+```
+
+Also, make sure your base class is in the correct package:
+
+```java
+package com.demo.base;
+
+import com.demo.constants.ApiConstants;
+import com.demo.model.TestCase;
+import com.demo.utils.ExcelReader;
+import io.restassured.RestAssured;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
+import java.util.List;
+
+public class TestBase {
+    protected List<TestCase> testCases;
+    protected ExcelReader excelReader;
+    
+    @BeforeSuite
+    public void setup() {
+        RestAssured.baseURI = ApiConstants.BASE_URL;
+        excelReader = new ExcelReader();
+        testCases = excelReader.readTestCases(ApiConstants.TEST_DATA_PATH);
+    }
+    
+    @DataProvider(name = "apiTestData")
+    public Object[][] getTestData() {
+        return testCases.stream()
+            .map(tc -> new Object[]{tc})
+            .toArray(Object[][]::new);
+    }
+}
+
+```
+
+Steps to fix:
+1. Update testng.xml with the correct package name
+2. Ensure all your Java files are in the correct packages
+3. Remove any references to TestNGTestListener
+4. Clean and rebuild:
+
+```bash
+mvn clean test
+```
+
+If you're still seeing issues, can you confirm:
+1. Are all your classes in the correct packages?
+2. Did you update the testng.xml file with the correct package name?
+3. Are there any other configuration files I should know about?
