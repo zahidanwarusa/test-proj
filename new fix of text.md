@@ -207,3 +207,22 @@ Also, try these troubleshooting steps:
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.release>21</maven.compiler.release>
+
+
+<properties>
+        <!-- Java Configuration -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
+
+        <!-- Dependencies Versions -->
+        <rest-assured.version>5.3.0</rest-assured.version>
+        <testng.version>7.8.0</testng.version>
+        <poi.version>5.2.3</poi.version>
+        <lombok.version>1.18.30</lombok.version>
+        <log4j.version>2.20.0</log4j.version>
+        <extentreports.version>5.1.1</extentreports.version>
+        <json.version>20231013</json.version>
+    </properties>
