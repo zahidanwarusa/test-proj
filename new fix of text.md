@@ -201,3 +201,9 @@ Also, try these troubleshooting steps:
                     </compilerArgs>
                 </configuration>
             </plugin>
+
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
