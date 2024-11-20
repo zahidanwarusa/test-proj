@@ -52,3 +52,19 @@ public class TestBase {
                 .toArray(Object[][]::new);
     }
 }
+
+
+
+
+
+@Test(priority = -1) // Run this first
+public void verifyExcelReading() {
+    Assert.assertNotNull(testCases, "Test cases should not be null");
+    Assert.assertFalse(testCases.isEmpty(), "Test cases should not be empty");
+    testCases.forEach(tc -> {
+        System.out.println("Test Case ID: " + tc.getTestId());
+        System.out.println("Endpoint: " + tc.getEndpoint());
+        System.out.println("Method: " + tc.getMethod());
+        System.out.println("-------------------");
+    });
+}
