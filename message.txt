@@ -1,97 +1,32 @@
-Please add this to somewhere in Git, I need this on gov system 
+Add below somewhere so I can access it 
 
 
+Subject: Annual Performance Review - FY2024 Accomplishments
 
-Subject: RE: Follow-up Regarding Office Attendance Request
+Dear [Manager's Name],
 
-Dear Tim,
+I am writing to provide a summary of my key accomplishments during this performance review period as a Software Tester for CBP.
 
-I hope this email finds you well. I wanted to follow up on my previous message regarding the office attendance schedule and share some additional context about my situation that I hope will help explain my request for an exception.
+Throughout the year, I have consistently demonstrated strong performance in testing the SASQ application, maintaining a high standard of quality assurance while meeting all deadlines. Some notable achievements include:
 
-My son requires regular therapy sessions, which have become increasingly demanding on our schedule. As his primary caregiver, I need to be present for these crucial therapeutic interventions, which occur multiple times per week. The current situation has become particularly challenging as I try to balance these essential medical appointments with office presence requirements.
+Quality Assurance and Testing
+- Thoroughly tested all SASQ application tickets, identifying critical issues early in the development cycle and preventing potential production defects
+- Maintained a 100% on-time completion rate for assigned testing tasks, contributing to smooth release cycles
+- Provided detailed, actionable feedback to the development team, improving overall application stability and user experience
 
-The therapy schedule is quite rigid, and finding alternative care arrangements has proven extremely difficult, especially given the specialized nature of his care needs. When I'm required to be in the office, it means either missing these vital therapy sessions or trying to reschedule them, which can result in significant setbacks in his progress and development.
+Technical Innovation
+- Designed and implemented a comprehensive API automation testing framework, addressing a long-standing need within the development team
+- This framework has significantly reduced manual testing time, improved test coverage, and enhanced the reliability of our API testing processes
+- The automation solution has been widely adopted by the team, demonstrating its effectiveness and value
 
-I want to emphasize that I remain deeply committed to my role and responsibilities. During remote work days, I have consistently demonstrated my ability to:
-- Maintain high productivity levels
-- Be fully available during business hours
-- Actively participate in all team meetings and collaborations
-- Complete all assignments on or ahead of schedule
-- Provide immediate response to any urgent matters
+Additional Contributions
+- Collaborated effectively with cross-functional teams to ensure testing requirements were met and aligned with business objectives
+- Maintained detailed documentation of testing procedures and results, facilitating knowledge sharing within the team
+- Proactively identified opportunities for process improvement in our testing workflow
 
-If granted this exception for reduced office presence, I would:
-- Ensure my monthly in-office days align with key team meetings and activities
-- Provide a regular schedule of my in-office days well in advance
-- Be flexible in adjusting my in-office days when critical in-person meetings arise
-- Continue to maintain strong virtual presence and communication
+I remain committed to maintaining these high standards and contributing to CBP's mission through innovative testing solutions and quality assurance practices.
 
-I understand this is a significant request, but I am going through a particularly challenging period, and your support would make a tremendous difference in helping me manage both my professional responsibilities and my son's essential care needs.
-
-I'm happy to discuss this further or provide any additional information that would be helpful in considering my request. Thank you for taking the time to understand my situation.
+Thank you for considering these accomplishments in my performance review.
 
 Best regards,
-Zahid
-
-
-#SingleInstance Force
-#NoEnv
-SetWorkingDir %A_ScriptDir%
-
-; Configuration
-global ZOOM_WINDOW_TITLE := "Zoom Meeting"
-global CHECK_INTERVAL := 1000 ; Check every 1 second
-
-; Initialize logging
-FormatTime, timestamp,, yyyy-MM-dd
-global LOG_FILE := "zoom_auto_accept_" . timestamp . ".log"
-
-LogMessage(message) {
-    FormatTime, timestamp,, yyyy-MM-dd HH:mm:ss
-    FileAppend, %timestamp% - %message%`n, %LOG_FILE%
-}
-
-; Main loop to check for remote control requests
-Loop {
-    if WinExist(ZOOM_WINDOW_TITLE) {
-        ; Check if remote control dialog is present
-        ImageSearch, foundX, foundY, 0, 0, A_ScreenWidth, A_ScreenHeight, remote_control_request.png
-        
-        if (ErrorLevel = 0) {
-            ; Found the remote control request dialog
-            LogMessage("Remote control request detected")
-            
-            ; Look for the Accept button
-            ImageSearch, acceptX, acceptY, 0, 0, A_ScreenWidth, A_ScreenHeight, accept_button.png
-            
-            if (ErrorLevel = 0) {
-                ; Click the Accept button
-                Click, %acceptX% %acceptY%
-                LogMessage("Accepted remote control request")
-                
-                ; Add a small delay to prevent double-clicking
-                Sleep, 500
-            } else {
-                LogMessage("Accept button not found")
-            }
-        }
-    } else {
-        LogMessage("Zoom meeting window not found")
-    }
-    
-    ; Wait before next check
-    Sleep, %CHECK_INTERVAL%
-}
-
-; Hotkeys for manual control
-^!z::  ; Ctrl+Alt+Z to pause/resume the script
-    Suspend, Toggle
-    if A_IsSuspended
-        LogMessage("Script paused")
-    else
-        LogMessage("Script resumed")
-return
-
-^!x::  ; Ctrl+Alt+X to exit the script
-    LogMessage("Script terminated by user")
-    ExitApp
-return
+[Your Name]
