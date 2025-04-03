@@ -1,32 +1,44 @@
-Add below somewhere so I can access it 
+get this to the git, i need to send this email
 
 
-Subject: Annual Performance Review - FY2024 Accomplishments
+Subject: Project Achievement Update and Strategic Testing Initiatives
+Dear [Manager's Name] and Senior Management Team,
+I'm writing to share a significant achievement and outline my strategic plans for enhancing our testing capabilities.
+Recent Achievement:
+I'm pleased to announce the successful completion of our API automation framework. Following discussions with the development team, we've established a plan to migrate this framework to the cloud, which will enhance its scalability and accessibility across the organization.
+Strategic Roadmap:
+Building on this foundation, I'm working on several key initiatives:
 
-Dear [Manager's Name],
+Two-Stage UI Development for Testing Framework
 
-I am writing to provide a summary of my key accomplishments during this performance review period as a Software Tester for CBP.
+Stage 1: Developing a streamlined UI that will allow testers to easily select data sources and endpoints
+Stage 2: Enhancing the UI to support on-demand data input and customization
+This will make our testing framework more accessible to team members with varying technical expertise
 
-Throughout the year, I have consistently demonstrated strong performance in testing the SASQ application, maintaining a high standard of quality assurance while meeting all deadlines. Some notable achievements include:
 
-Quality Assurance and Testing
-- Thoroughly tested all SASQ application tickets, identifying critical issues early in the development cycle and preventing potential production defects
-- Maintained a 100% on-time completion rate for assigned testing tasks, contributing to smooth release cycles
-- Provided detailed, actionable feedback to the development team, improving overall application stability and user experience
+Advanced API Automation Enhancement (Long-Term Vision)
+As my ultimate long-term goal, I envision developing an AI-powered API testing model that will:
 
-Technical Innovation
-- Designed and implemented a comprehensive API automation testing framework, addressing a long-standing need within the development team
-- This framework has significantly reduced manual testing time, improved test coverage, and enhanced the reliability of our API testing processes
-- The automation solution has been widely adopted by the team, demonstrating its effectiveness and value
+Automatically detect endpoint calling patterns
+Identify required data elements for testing
+Determine appropriate methods (GET, POST, etc.)
+Discover data structures automatically with minimal manual input
+This represents a significant future advancement in our test automation capabilities
 
-Additional Contributions
-- Collaborated effectively with cross-functional teams to ensure testing requirements were met and aligned with business objectives
-- Maintained detailed documentation of testing procedures and results, facilitating knowledge sharing within the team
-- Proactively identified opportunities for process improvement in our testing workflow
 
-I remain committed to maintaining these high standards and contributing to CBP's mission through innovative testing solutions and quality assurance practices.
+Automated Test Data Framework on SASQ Lookout
+To address one of our most persistent testing challenges, I'm developing an automated framework to:
 
-Thank you for considering these accomplishments in my performance review.
+Create test data on SASQ Lookout on demand
+Provide testing teams with readily available data that meets specific test requirements
+Eliminate waiting periods for test data preparation
+Support more comprehensive test scenarios
 
+
+
+Throughout these initiatives, I will continue to actively participate in application testing to maintain and improve the quality of our products. I remain committed to completing all assigned tickets/tasks in a timely manner, while also helping to standardize our documentation processes for logging defects, testing stories, and other critical testing artifacts. This standardization will improve knowledge sharing and ensure consistent quality across our testing practices.
+I would appreciate the opportunity to discuss these initiatives in more detail and align them with our department's strategic objectives.
+Thank you for your continued support.
 Best regards,
 [Your Name]
+[Your Title]
