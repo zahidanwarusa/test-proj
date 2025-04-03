@@ -38,6 +38,9 @@ Support more comprehensive test scenarios
 
 Throughout these initiatives, I will continue to actively participate in application testing to maintain and improve the quality of our products. I remain committed to completing all assigned tickets/tasks in a timely manner, while also helping to standardize our documentation processes for logging defects, testing stories, and other critical testing artifacts. This standardization will improve knowledge sharing and ensure consistent quality across our testing practices.
 I would appreciate the opportunity to discuss these initiatives in more detail and align them with our department's strategic objectives.
+
+
+I'd like to express my particular gratitude to Shawn for his guidance and support throughout the development of the API automation framework. His insights and feedback have been invaluable in bringing this project to successful completion.
 Thank you for your continued support.
 Best regards,
 [Your Name]
