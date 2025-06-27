@@ -1,47 +1,12 @@
-get this to the git, i need to send this email
+Dear [Manager’s Name],
 
+I hope you’re doing well. I’m writing to formally resign from my position as a Software Engineer supporting CBP, effective [your last working day, typically two weeks from the date of the email, unless otherwise specified in your contract].
 
-Subject: Project Achievement Update and Strategic Testing Initiatives
-Dear [Manager's Name] and Senior Management Team,
-I'm writing to share a significant achievement and outline my strategic plans for enhancing our testing capabilities.
-Recent Achievement:
-I'm pleased to announce the successful completion of our API automation framework. Following discussions with the development team, we've established a plan to migrate this framework to the cloud, which will enhance its scalability and accessibility across the organization.
-Strategic Roadmap:
-Building on this foundation, I'm working on several key initiatives:
+I’ve appreciated the opportunity to contribute to the team and gain valuable experience during my time here. I’ve decided to pursue another opportunity that aligns with my long-term goals.
 
-Two-Stage UI Development for Testing Framework
+Please let me know how I can help with the transition. I’m committed to making this process as smooth as possible.
 
-Stage 1: Developing a streamlined UI that will allow testers to easily select data sources and endpoints
-Stage 2: Enhancing the UI to support on-demand data input and customization
-This will make our testing framework more accessible to team members with varying technical expertise
+Thank you again for the opportunity.
 
-
-Advanced API Automation Enhancement (Long-Term Vision)
-As my ultimate long-term goal, I envision developing an AI-powered API testing model that will:
-
-Automatically detect endpoint calling patterns
-Identify required data elements for testing
-Determine appropriate methods (GET, POST, etc.)
-Discover data structures automatically with minimal manual input
-This represents a significant future advancement in our test automation capabilities
-
-
-Automated Test Data Framework on SASQ Lookout
-To address one of our most persistent testing challenges, I'm developing an automated framework to:
-
-Create test data on SASQ Lookout on demand
-Provide testing teams with readily available data that meets specific test requirements
-Eliminate waiting periods for test data preparation
-Support more comprehensive test scenarios
-
-
-
-Throughout these initiatives, I will continue to actively participate in application testing to maintain and improve the quality of our products. I remain committed to completing all assigned tickets/tasks in a timely manner, while also helping to standardize our documentation processes for logging defects, testing stories, and other critical testing artifacts. This standardization will improve knowledge sharing and ensure consistent quality across our testing practices.
-I would appreciate the opportunity to discuss these initiatives in more detail and align them with our department's strategic objectives.
-
-
-I'd like to express my particular gratitude to Shawn for his guidance and support throughout the development of the API automation framework. His insights and feedback have been invaluable in bringing this project to successful completion.
-Thank you for your continued support.
-Best regards,
-[Your Name]
-[Your Title]
+Sincerely,
+Zahid Anwar
